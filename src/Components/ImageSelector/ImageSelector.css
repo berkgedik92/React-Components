@@ -1,0 +1,231 @@
+.image-container {
+    aspect-ratio: 2/1;
+    box-sizing: border-box;;
+    border: 2px solid black;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Visibility styles */
+.image-container .visible, .image-container.visible {
+    visibility: visible;
+}
+
+.image-container .invisible, .image-container.invisible {
+    visibility: hidden;
+}
+
+.image-container .buttons-container .button.visible {
+    display: inline-flex;
+}
+
+.image-container .buttons-container .button.invisible {
+    display: none;
+}
+/* Visibility styles done */
+
+.image-container .file-selector
+{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: Alpha(Opacity=0);
+    cursor: pointer;
+}
+
+.image-container .original-image {
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container .edit-image-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.image-container .edit-image-container .edit-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: all-scroll;
+}
+
+.image-container .display-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container .load-image-icon {
+    height: 40%;
+    aspect-ratio: 1/1;
+    background: #b4bac0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+}
+
+.image-container .load-image-icon:before {
+    content: "+";
+}
+
+.image-container .shadow-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image-container .shadow-container .shadow {
+    width: 70%;
+    height: 70%;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0px 0px 0px 2000px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: grabbing;
+}
+
+.image-container .shadow-container .shadow .shadow-inner-dom {
+    width: 100%;
+    height: 100%;
+    cursor:grab;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+
+.image-container .shadow-container .shadow .holder {
+    background: red;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    position: absolute;
+    border-radius: 99px;
+}
+
+.image-container .shadow-container .shadow .top-left-holder {
+    top: -3px;
+    left: -3px;
+    cursor: nwse-resize;
+}
+
+.image-container .shadow-container .shadow .top-right-holder {
+    top: -3px;
+    right: -3px;
+    cursor: nesw-resize;
+}
+
+.image-container .shadow-container .shadow .bottom-left-holder {
+    bottom: -3px;
+    left: -3px;
+    cursor: nesw-resize;
+}
+
+.image-container .shadow-container .shadow .bottom-right-holder {
+    bottom: -6px;
+    right: -6px;
+    cursor: nwse-resize;
+}
+
+/* Top right icons */
+.image-container .buttons-container {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    z-index: 1;
+    display: inline-flex;
+    height:36px;
+}
+
+.image-container .buttons-container .button {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    text-align: center;
+    border-radius: 99px;
+    cursor: pointer;
+    color: white;
+    margin-left: 5px;
+}
+
+.image-container .buttons-container .remove-image-icon {
+    background-color: #d27c91;
+}
+
+.image-container .buttons-container .remove-image-icon:before {
+    content: "X";
+}
+
+.image-container .buttons-container .display-image-icon {
+    background-color: green;
+}
+
+.image-container .buttons-container .edit-image-icon {
+    background-color: #f5ce35;
+}
+
+/* Top right icons completed */
+
+.image-container .picture-zoom-container {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    width: 8vh;
+    height: 4vh;
+    background: #eee;
+    z-index: 9999;
+}
+
+.image-container .picture-zoom-container .picture-zoom-in,
+.image-container .picture-zoom-container .picture-zoom-out {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vh;
+    height: 4vh;
+    font-size: 3vh;
+    line-height: 4vh;
+    box-sizing: border-box;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.image-container .picture-zoom-container .zoom-in:before {
+    content: "+";
+}
+
+.image-container .picture-zoom-container .zoom-out:before {
+    content: "-";
+}
+
+.image-container .picture-zoom-container .picture-zoom-in {
+    border-left: 0;
+}

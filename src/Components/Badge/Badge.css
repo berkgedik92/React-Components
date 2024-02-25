@@ -1,0 +1,50 @@
+.badge-outer {
+    width: 156px;
+    height: 37px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius:4px;
+    background-color:#fff;
+    border: 2px solid #9c1f1e;
+    border-right:none;
+    transition:background-color .2s;
+    box-sizing:border-box;
+    position:relative;
+    padding: 4px 25px 4px 4px;
+}
+
+.badge-outer:before {
+    content:"";
+    position:absolute;
+    right:1px;
+    top:-2px;
+    border-color:transparent #9C1F1E transparent transparent;
+    border-style:solid;
+    border-width:18px 22px
+}
+
+.badge-outer:after {
+    content:"";
+    position:absolute;
+    right:0px;
+    top:0;
+    border-color:transparent #fff transparent transparent;
+    border-style:solid;
+    border-width:16px 20px
+}
+
+.badge-outer .badge-name {
+    display: block;
+    width: 112px;
+    height: 24px;
+    line-height: 16px;
+    font-weight:900;
+    color: rgb(156, 31, 30);
+    font-family: brandon-grotesque, "Helvetica Neue", Helvetica, arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    outline-color: rgb(156, 31, 30);
+    outline-style: none;
+    outline-width: 0px;
+    text-transform: uppercase;
+}

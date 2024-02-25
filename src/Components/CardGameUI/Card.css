@@ -1,0 +1,29 @@
+.card {
+	display: inline-block;
+	transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.standart {
+    height: 72px;
+	width: 50px;
+}
+
+.card.standart {
+	background-size: 50px 72px;
+}
+
+.big {
+	height: 144px;
+	width: 100px;
+}
+
+.card.big {
+	background-size: 100px 144px;
+}
+
+.placeholder {
+    box-sizing: border-box;
+    border: 2px dashed orange;
+    display: inline-block;
+}

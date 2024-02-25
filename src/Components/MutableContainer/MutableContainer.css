@@ -1,0 +1,37 @@
+.add-item,
+.remove-item {
+    border-radius: 99px;
+    cursor: pointer;
+    color: white;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+    height: 26px;
+    width: 26px;
+    line-height: 26px;
+}
+
+.add-item {
+    background-color: #7ace7a;
+}
+
+.add-item:before {
+    content: "+";
+}
+
+.remove-item {
+    position: absolute;
+    background-color: #d27c91;
+    right: 0;
+    top: 0;
+}
+
+.remove-item:before {
+    content: "X";
+}
+
+.mutable-list-element {
+    position: relative;
+}

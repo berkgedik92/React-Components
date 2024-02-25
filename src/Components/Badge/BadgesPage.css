@@ -1,0 +1,12 @@
+#badges-page {
+	padding: 20px;
+}
+
+.element-container {
+	display: flex;
+	gap: 15px;
+}
+
+.mutable-list-element .remove-item {
+	top: -13px;
+}

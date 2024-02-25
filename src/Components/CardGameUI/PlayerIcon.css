@@ -1,0 +1,79 @@
+.avatar_container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.opponent_avatar {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    /* Substraction: Width / 2*/
+    left: calc(50% - 25px);
+    background-size: 50px 50px;
+}
+
+.opponent_name.active {
+    background-color: yellow;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none; /* Non-prefixed version, currently
+								supported by Chrome, Edge, Opera and Firefox */
+}
+
+.opponent_name {
+	background: white;
+    display: inline-block;
+    font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 7px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 1;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.opponent_card_amount {
+	width: 20px;
+    position: absolute;
+    z-index: 2;
+    height: 20px;
+    background: red;
+    border-radius: 999px;
+    top: 35px;
+    font-size: 15px;
+    line-height: 20px;
+    left: calc(50% - 10px);
+    color: white;
+    text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.opponent_card_icon {
+    display: inline-block;
+    height: 21px;
+    width: 14px;
+    position: relative;
+    z-index: 1;
+    background-size: 14px 21px;
+    top: 34px;
+    left: 30px;
+}

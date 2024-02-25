@@ -1,0 +1,332 @@
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;  
+}
+
+.card-game-explanation {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	padding: 10px;
+	color: white;
+}
+
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#kastet_game {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background: #064210;
+}
+
+#kastet_game #kastet_table_container {
+	position: absolute;
+	top: 70px;
+	left: 70px;
+	box-sizing: border-box;
+	/* 72 + 144 px + 2 * padding + 2 * border */
+	/* 
+		Substraction: 
+
+		- bottom_part (144px)
+		- Player_top_hand_container (70px) (equals to "this.top" as well)
+	*/
+
+	height: calc(100vh - 214px);
+	/*
+		Substraction:
+
+		- 2 * player_left_hand_container (140px)
+	*/
+	width: calc(100vw - 140px);
+}
+
+#kastet_game .player_icon {
+	position: absolute;
+	width: 100px;
+	height: 80px;
+}
+
+#kastet_game #player_container .player_icon {
+	/* 50px because the container is 50px below its normal position */
+	bottom: 50px;
+	/* Substraction: Width / 2 */
+	left: calc(50% - 50px);
+}
+
+#kastet_game .top_opponent.player_icon {
+	top: 0px;
+	/* Substraction: Width / 2 */
+	left: calc(50vw - 50px);
+}
+
+#kastet_game .left_opponent.player_icon {
+	left: 0px;
+	/* Substraction: Height / 2 */
+	top: calc(50vh - 40px);
+}
+
+#kastet_game .right_opponent.player_icon {
+	right: 0px;
+	/* Substraction: Height / 2 */
+	top: calc(50vh - 40px);
+}
+
+#kastet_game #bottom_part {
+	position: absolute;
+	bottom: 0px;
+	height: 144px;
+	width: 100%;
+}
+
+#kastet_game #bottom_part #player_container {
+	position: absolute;
+	bottom: -50px;
+	left: 10px;
+	background: white;
+	width: 130px;
+	height: 100px;
+	border-radius: 999px;
+}
+
+#kastet_game #bottom_part #player_container #avatar {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	background-size: 50px 50px;
+	position: absolute;
+	left: calc(50% - 25px);
+	top:-15px;
+}
+
+#kastet_game #bottom_part #player_container #player_name {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 60px;
+	height: 25px;
+	position: absolute;
+	/* Bottom = 50px because its parent has bottom: -50px*/
+	bottom: 50px;
+	left: calc(50% - 30px);
+	background: white;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 7px;
+    /* (width + 2 * border-radius) / 2 */
+    z-index: 1
+}
+
+#kastet_game #bottom_part #player_container .button {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: -15px;
+	background: white;
+    font-size: 15px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 7px;
+	box-sizing: border-box;
+    z-index: 1;
+	cursor: pointer;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none; /* Non-prefixed version, currently
+								supported by Chrome, Edge, Opera and Firefox */
+}
+
+#kastet_game #bottom_part #player_container #end_turn {
+	display: inline-flex;
+	position: absolute;
+	right: -5px;
+  top: -35px;
+	background-color: green;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 99px;
+  cursor: pointer;
+  color: white;
+}
+
+#kastet_game #bottom_part #player_container #revert {
+	display: inline-flex;
+	position: absolute;
+	left: -5px;
+  top: -35px;
+	background-color: yellow;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 99px;
+  cursor: pointer;
+  color: white;
+}
+
+#kastet_game #bottom_part #player_hand_container {
+	display: inline-block;
+	position: absolute;
+	left: 15vw;
+	height: 148px;
+	width: 70vw;
+	overflow-x: auto;
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#kastet_game #bottom_part #player_hand_container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+#kastet_game #bottom_part #deck_container {
+	position: absolute;
+	bottom: -50px;
+	right: 10px;
+	background: white;
+	width: 100px;
+	height: 100px;
+	border-radius: 999px;
+	cursor: pointer;
+}
+
+#kastet_game #bottom_part #deck_container #deck {
+	position: relative;
+	top: 0px;	
+	transition: top 1s;
+	text-align: center;
+}
+
+#kastet_game #bottom_part #deck_container:hover #deck {
+	position: relative;
+	top: -10px;
+}
+
+#left-buttons-container {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	width: 90px;
+  height: 70px;
+  z-index: 10;
+}
+
+#back-button {
+	display: inline-block;
+  vertical-align: top;
+  height: 70px;
+  width: 17px;
+  margin-right: 3px;
+  line-height: 15px;
+  text-align: center;
+  font-weight: bold;
+  background: white;
+  height: 17px;
+  position: relative;
+  top: calc(50% - 7px);
+  border-radius: 99px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#match-number-container {
+	display: inline-block;
+	vertical-align: top;
+	width: 70px;
+  height: 70px;
+  background: #da9696;
+  text-align: center;
+}
+
+#match-number-container-number {
+	font-weight: bold;
+  font-size: 35px;
+}
+
+#point-display-button {
+	position: fixed;
+	z-index: 1;
+	right: 10px;
+	top: 10px;
+	width:30px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 25px;
+  background: #da9696;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+#animationCard.animateFromDeckToPlayerHand {
+	animation-name: animateFromDeckToPlayerHand;
+	animation-duration: 1s;
+}
+
+#animationCard.animateFromDeckToTopOpponentHand {
+	animation-name: animateFromDeckToTopOpponentHand;
+	animation-duration: 1s;
+}
+
+#animationCard.animateFromDeckToLeftOpponentHand {
+	animation-name: animateFromDeckToLeftOpponentHand;
+	animation-duration: 1s;
+}
+
+#animationCard.animateFromDeckToRightOpponentHand {
+	animation-name: animateFromDeckToRightOpponentHand;
+	animation-duration: 1s;
+}
+
+
+@keyframes animateFromDeckToPlayerHand {
+  0% {top: 100vh; left: calc(100vw - 100px); opacity: 1}
+  99% {left: calc(85vw - 100px); top: calc(100vh - 144px); opacity: 1}
+  100% {left: calc(85vw - 100px); top: calc(100vh - 144px); opacity: 0}
+}
+
+@keyframes animateFromDeckToTopOpponentHand {
+  0% {top: 100vh; left: calc(100vw - 100px); opacity: 1}
+  99% {left: calc(50vw - 50px); top: 0px; opacity: 1}
+  100% {left: calc(50vw - 50px); top: 0px; opacity: 0}
+}
+
+@keyframes animateFromDeckToLeftOpponentHand {
+  0% {top: 100vh; left: calc(100vw - 100px); opacity: 1}
+  99% {left: 0px; top: calc(50vh - 40px); opacity: 1}
+  100% {left: 0px; top: calc(50vh - 40px); opacity: 0}
+}
+
+@keyframes animateFromDeckToRightOpponentHand {
+  0% {top: 100vh; left: calc(100vw - 100px); opacity: 1}
+  99% {left: calc(100vw - 100px); top: calc(50vh - 40px); opacity: 1}
+  100% {left: calc(100vw - 100px); top: calc(50vh - 40px); opacity: 0}
+}
+
+#animationCard {
+  position: fixed;
+  z-index: 6;
+  opacity: 0;
+}
+

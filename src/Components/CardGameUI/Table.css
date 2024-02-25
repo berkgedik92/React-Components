@@ -1,0 +1,14 @@
+.table {
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 26px;
+}
+
+.active_table {
+    border: 2px dashed yellow;
+}
+
+.non_active_table {
+    border: 2px dashed black;
+}

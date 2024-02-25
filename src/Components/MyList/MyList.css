@@ -1,0 +1,79 @@
+.my-list-component {
+    position: relative;
+    background: transparent;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.my-list-component .selected-element {
+    height: 100%;
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+.my-list-component .selected-element .element-icon {
+    aspect-ratio: 1/1;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 999px;
+}
+
+.my-list-component .selected-element .element-input {
+    vertical-align: top;
+    display: inline-block;
+    width: calc(100% - 30px);
+    box-sizing: border-box;
+    border: 0;
+    background: transparent;
+    height: inherit;
+    line-height: inherit;
+    font-weight:inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    outline-color: inherit;
+    outline-style: inherit;
+    outline-width: inherit;
+    text-transform: inherit;
+}
+
+.my-list-component .my-elements-list {
+    display: none;
+    padding-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 999;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+.my-list-component .my-elements-list .element {
+    margin-bottom: 5px;
+    height: 20px;
+    padding-left: 3px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.my-list-component .my-elements-list .element:hover {
+    background-color: #eee;
+}
+
+.my-list-component .my-elements-list .element .element-icon {
+    aspect-ratio: 1/1;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 999px;
+    vertical-align: top;
+}
+
+.my-list-component .my-elements-list .element .element-name {
+    vertical-align: top;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+}

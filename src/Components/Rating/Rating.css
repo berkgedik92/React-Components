@@ -1,0 +1,32 @@
+/* Five-star rating */
+
+.five-star-rating {
+    display:flex;
+    align-items:center;
+}
+
+.five-star-rating div {
+    padding-right:4px;
+}
+
+.five-star-rating svg {
+    height:20px;
+    width:20px;
+    pointer-events:none;
+}
+
+.five-star-rating .count {
+    margin-left:4px;
+}
+
+.five-star-rating .count:before {
+    content:"(";
+}
+
+.five-star-rating .count:after {
+    content:")";
+}
+
+.five-star-rating .star-div {
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.deck-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.deck-card-count {
+    width: 20px;
+    position: absolute;
+    z-index: 2;
+    height: 20px;
+    background: red;
+    border-radius: 999px;
+    top: 25px;
+    font-size: 15px;
+    line-height: 20px;
+    left: calc(50% - 10px);
+    color: white;
+    text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}

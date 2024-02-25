@@ -1,0 +1,56 @@
+.hand-with-scroll-buttons {
+	width: calc(100% - 60px); 
+	position: relative;
+	padding-left: 30px;
+	overflow-y: hidden;
+}
+
+.hand-with-scroll-buttons .hand {
+	height: 148px;
+	position: relative;
+	left: 0px;
+}
+
+.hand-with-scroll-buttons .hand .game-card-container:not(:last-child) {
+    margin-right: -40px;
+}
+
+.hand-with-scroll-buttons .hand-outer {
+	position: relative;
+	width: calc(100% - 30px);
+	overflow-x: auto;
+}
+
+.hand-with-scroll-buttons .scroll-helper {
+	display: inline-block;
+	position: absolute;
+    z-index: 2;
+	line-height: 26px;
+    height: 26px;
+	width: 26px;
+    font-size: 20px;
+	/*144px (card height) - half of scroll helper height divided by two*/
+	border-radius: 999px;
+	background: #ccc;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none; /* Non-prefixed version, currently
+								supported by Chrome, Edge, Opera and Firefox */
+}
+
+.hand-with-scroll-buttons .scroll-helper.scroll-left {
+	left: 0px; 
+	top: 72px;
+}
+
+.hand-with-scroll-buttons .scroll-helper.scroll-right {
+	right: 0px; 
+	top: 72px;
+}

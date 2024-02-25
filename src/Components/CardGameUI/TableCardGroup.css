@@ -1,0 +1,76 @@
+.group {
+    position: relative;
+    display: inline-block;
+    height: 75px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: content-box;
+}
+
+.group .left {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 80px;
+    top:-4px;
+    left: 0px;
+}
+
+.group .show {
+    display: inline-block!important;
+}
+
+.group .hide {
+    display: none!important;
+}
+
+.group .right {
+    position: absolute;
+    display: inline-block;
+    width: 50%;
+    height: 80px;
+    top:-4px;
+    right: 0px;
+}
+
+.group .bottom {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 72px;
+    top: 36px;
+    left: calc(50% - 17px);
+}
+
+.group .back {
+    z-index: 0;
+    box-sizing: border-box;
+}
+
+.group .front {
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.group .back.active {
+    background: rgba(200, 200, 200, 0.4);
+    border-width: 2px;
+    border-color: orange;
+    border-style: dashed;
+}
+
+.group .back.non_active {
+    background: none;
+}
+
+.group .card_container:not(:last-child) {
+    margin-right: -15px;
+}
+
+.group .card_container {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
